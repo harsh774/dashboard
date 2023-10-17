@@ -5,7 +5,8 @@ import {
   Autocomplete,
   TextField,
 } from '@mui/material';
-import { Bar, BarChart, Tooltip, XAxis } from 'recharts';
+import "../components/style.css"
+import { Bar, BarChart, XAxis } from 'recharts';
 
 function SalesOverviewChart({ open, setOpen, options, loading, salesData }) {
   return (
@@ -54,14 +55,14 @@ function SalesOverviewChart({ open, setOpen, options, loading, salesData }) {
           style={{ overflow: "auto", width: "110%" }}
           maxBarSize={40}
           width={850}
-          height={220}
+          height={235}
           className="barchart"
           data={salesData}
           margin={{ top: 20, right: 30, left: 20, bottom: 5 }} 
         >
           <XAxis dataKey="month" axisLine={false}/>
-          <Tooltip />
-          <Bar dataKey="sales" fill="#5A32EA" radius={[10, 10, 10, 10]} />
+          {/* <Tooltip /> */}
+          <Bar overflow='none' className='bar' dataKey="sales" fill="rgba(220, 220, 220, 0.6)" radius={[10, 10, 10, 10]} />
         </BarChart>
       </Paper>
   );

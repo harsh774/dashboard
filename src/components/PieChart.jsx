@@ -1,6 +1,6 @@
 import React from 'react';
 import { Paper, Typography } from '@mui/material';
-import { PieChart, Pie, Cell, Tooltip} from 'recharts';
+import { PieChart, Pie, Cell, Tooltip, Legend} from 'recharts';
 import sampleData from '../utils/data';
 
 const COLORS = ["#F23C9B", "#5832E9"];
@@ -14,7 +14,9 @@ const PieChartComponent = () => {
   return (
     <Paper style={{ height: "300px", padding: "20px" }}>
         <div style={{ display: "flex" }}>
-        <div>
+          
+        <div style={{display: 'block'}}>
+          
             <Typography component="div" variant="h5" style={{fontWeight:"bold"}}>
               Customers
             </Typography>
@@ -26,6 +28,7 @@ const PieChartComponent = () => {
       <PieChart width={200} height={350}>
    
         <Pie
+        
           data={sampleData.pieData}
           cx="50%"
           cy="50%"
@@ -46,13 +49,11 @@ const PieChartComponent = () => {
             <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle" fontSize="25" fill="green">
                 {`${percentage}%`}
           </text>
-        
-        
+      <Legend verticalAlign="center" height={36} />
         
         
         <Tooltip />
       </PieChart>
-      {/* <Legend verticalAlign="bottom" height={36} /> */}
 
       </div>
       

@@ -8,13 +8,6 @@ import {
   Grid,
   IconButton,
   InputBase,
-  Paper,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
   Toolbar,
   Typography,
   alpha,
@@ -32,6 +25,7 @@ import sampleData from "../utils/data";
 import StatCard from "../components/Stats";
 import SalesOverviewChart from "../components/BarChar";
 import PieChartComponent from "../components/PieChart";
+import ProductDetail from '../components/ProductDetail';
 
 const drawerWidth = 230;
 
@@ -99,7 +93,7 @@ function Dashboard(props) {
             variant="h6"
             noWrap
             component="div"
-            style={{ marginLeft: "1.3em" }}
+            style={{ marginLeft: "1.3em", fontWeight:"bold"}}
           >
             Hello Shahrukh👋,
           </Typography>
@@ -247,84 +241,12 @@ function Dashboard(props) {
             <PieChartComponent />
           </Grid>
 
-          <Grid item xs={12} sm={8} md={12}>
-            <Paper style={{ height: "300px" }}>
-              <TableContainer style={{ maxHeight: 300 }}>
-                <Table stickyHeader>
-                  <TableHead>
-                    <TableRow>
-                      <TableCell
-                        style={{
-                          backgroundColor: "#5A32EA",
-                          color: "white",
-                          textAlign: "center",
-                        }}
-                      >
-                        Product
-                      </TableCell>
-                      <TableCell
-                        style={{
-                          backgroundColor: "#5A32EA",
-                          color: "white",
-                          textAlign: "center",
-                        }}
-                      >
-                        Price
-                      </TableCell>
-                      <TableCell
-                        style={{
-                          backgroundColor: "#5A32EA",
-                          color: "white",
-                          textAlign: "center",
-                        }}
-                      >
-                        Sold
-                      </TableCell>
-                      <TableCell
-                        style={{
-                          backgroundColor: "#5A32EA",
-                          color: "white",
-                          textAlign: "center",
-                        }}
-                      >
-                        In Stock
-                      </TableCell>
-                      <TableCell
-                        style={{
-                          backgroundColor: "#5A32EA",
-                          color: "white",
-                          textAlign: "center",
-                        }}
-                      >
-                        Region
-                      </TableCell>
-                    </TableRow>
-                  </TableHead>
-                  <TableBody>
-                    {sampleData.tableData.map((row, index) => (
-                      <TableRow key={index}>
-                        <TableCell style={{ textAlign: "center" }}>
-                          {row.name}
-                        </TableCell>
-                        <TableCell style={{ textAlign: "center" }}>
-                          {row.price}
-                        </TableCell>
-                        <TableCell style={{ textAlign: "center" }}>
-                          {row.sold}
-                        </TableCell>
-                        <TableCell style={{ textAlign: "center" }}>
-                          {row.inStock}
-                        </TableCell>
-                        <TableCell style={{ textAlign: "center" }}>
-                          {row.region}
-                        </TableCell>
-                      </TableRow>
-                    ))}
-                  </TableBody>
-                </Table>
-              </TableContainer>
-            </Paper>
+          <Grid item xs={12} sm={8} md={12} >
+            {/* <ProductTable/> */}
+            <ProductDetail/>
           </Grid>
+
+          
         </Grid>
       </Box>
     </Box>
