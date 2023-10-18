@@ -23,7 +23,7 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
   return (
     <Paper style={{ height: "300px", padding: "20px", overflow: 'hidden' }}>
         
-      <div style={{ display: "flex", justifyContent: "space-between" }}>
+      <div style={{ width: '90%', display: "flex", justifyContent: "space-between" }}>
       <div>
           <Typography
             component="div"
@@ -33,8 +33,8 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
             Product Sell
           </Typography>
         </div>
-        {/* <div style={{width: '30%', display: 'flex'}}> */}
-        <div
+         <div  style={{width: '40%', display: 'flex'}}>
+        {/*<div
               style={{
                 display: 'flex',
                 position: "relative",
@@ -73,14 +73,20 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
                 
               />
               </div>
+            </div> */}
+            <div style={{display: 'flex', marginTop: '1%', justifyContent: 'space-between'}}>
+            <SearchIcon style={{ marginTop: '5%'}}/>
+            <InputBase placeholder="Search" style={{fontSize: 'small'}}/>
             </div>
+            
+
             <div>
             <TextField
             label="Last"
             variant="standard"
             select
             defaultValue={30} // Default value for the dropdown
-            style={{ marginLeft: "1em", width: '6em' }}
+            style={{ marginLeft: '20%', width: '5.5em' }}
             
           >
             <MenuItem value={7}>7 Days</MenuItem>
@@ -88,11 +94,11 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
             <MenuItem value={90}>90 Days</MenuItem>
           </TextField>
             </div>     
-        {/* </div> */}
+        </div>
       </div>
 
       <TableContainer style={{ maxHeight: 250 }}>
-        <Table stickyHeader>
+        <Table>
           <TableHead>
             <TableRow>
               <TableCell
