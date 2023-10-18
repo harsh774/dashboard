@@ -1,5 +1,5 @@
-import React from 'react';
-import { Avatar, Paper } from '@mui/material';
+import React from "react";
+import { Avatar, Paper } from "@mui/material";
 
 function StatCard({ title, value, change, icon, propcolor }) {
   return (
@@ -25,9 +25,7 @@ function StatCard({ title, value, change, icon, propcolor }) {
           <div style={{ fontSize: "0.8em", fontWeight: "lighter" }}>
             {title}
           </div>
-          <div style={{ fontSize: "1.5em", fontWeight: "bold" }}>
-            {value}
-          </div>
+          <div style={{ fontSize: "1.5em", fontWeight: "bold" }}>{value}</div>
           <div style={{ fontSize: "0.8em" }}>
             <span style={{ color: propcolor, fontWeight: "bold" }}>
               {change}

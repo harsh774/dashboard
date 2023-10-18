@@ -1,15 +1,6 @@
 .gridlayout{
-  padding-left: 2%;
-}
-.boxicon{
-  width: 5em;
-  margin-left: 1ex;
-  margin-top: 2ex;
+  padding-left: 5%;
+  padding-right: 5%;
 }
 
-.tablehead{
-  background-color: "#5A32EA";
-  color: white;
-  text-align: center;
-}
 

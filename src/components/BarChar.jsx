@@ -1,70 +1,74 @@
-import React from 'react';
-import {
-  Paper,
-  Typography,
-  Autocomplete,
-  TextField,
-} from '@mui/material';
-import "../components/style.css"
-import { Bar, BarChart, XAxis } from 'recharts';
+import React from "react";
+import { Paper, Typography, Autocomplete, TextField } from "@mui/material";
+import "../components/style.css";
+import { Bar, BarChart, XAxis } from "recharts";
 
 function SalesOverviewChart({ open, setOpen, options, loading, salesData }) {
   return (
-    
-      <Paper style={{ height: "300px", padding: "20px", overflow: "hidden" }}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <div>
-            <Typography component="div" variant="h5" style={{fontWeight:"bold"}}>
-              Overview
-            </Typography>
-            <Typography fontSize={15} color={"gray"}>
-              Monthly Earning
-            </Typography>
-          </div>
-          <div>
-            <Autocomplete
-              id="asynchronous-demo"
-              sx={{ width: 150 }}
-              open={open}
-              onOpen={() => {
-                setOpen(true);
-              }}
-              onClose={() => {
-                setOpen(false);
-              }}
-              isOptionEqualToValue={(option, value) =>
-                option.title === value.title
-              }
-              getOptionLabel={(option) => option.title}
-              options={options}
-              loading={loading}
-              renderInput={(params) => (
-                <TextField
-                  {...params}
-                  label="Time"
-                  InputProps={{
-                    ...params.InputProps,
-                  }}
-                />
-              )}
-            />
-          </div>
+    <Paper style={{ height: "300px", padding: "20px", overflow: "hidden" }}>
+      <div style={{ display: "flex", justifyContent: "space-between" }}>
+        <div>
+          <Typography
+            component="div"
+            variant="h5"
+            style={{ fontWeight: "bold" }}
+          >
+            Overview
+          </Typography>
+          <Typography fontSize={15} color={"gray"}>
+            Monthly Earning
+          </Typography>
         </div>
+        <div>
+          <Autocomplete
+            id="asynchronous-demo"
+            sx={{ width: 150 }}
+            open={open}
+            onOpen={() => {
+              setOpen(true);
+            }}
+            onClose={() => {
+              setOpen(false);
+            }}
+            isOptionEqualToValue={(option, value) =>
+              option.title === value.title
+            }
+            getOptionLabel={(option) => option.title}
+            options={options}
+            loading={loading}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                label="Time"
+                InputProps={{
+                  ...params.InputProps,
+                }}
+              />
+            )}
+          />
+        </div>
+      </div>
 
-        <BarChart
-          style={{ overflow: "auto", width: "110%" }}
-          maxBarSize={40}
-          width={850}
-          height={235}
-          className="barchart"
-          data={salesData}
-          margin={{ top: 20, right: 30, left: 20, bottom: 5 }} 
-        >
-          <XAxis dataKey="month" axisLine={false}/>
-          {/* <Tooltip /> */}
-          <Bar overflow='none' className='bar' dataKey="sales" fill="rgba(220, 220, 220, 0.6)" radius={[10, 10, 10, 10]} />
-        </BarChart>
-      </Paper>
+      <BarChart
+        style={{ overflow: "auto", width: "110%" }}
+        maxBarSize={40}
+        width={850}
+        height={235}
+        className="barchart"
+        data={salesData}
+        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+      >
+        <XAxis dataKey="month" axisLine={false} />
+        {/* <Tooltip /> */}
+        <Bar
+          overflow="none"
+          className="bar"
+          dataKey="sales"
+          fill="rgba(220, 220, 220, 0.6)"
+          radius={[10, 10, 10, 10]}
+        />
+      </BarChart>
+    </Paper>
   );
 }
 

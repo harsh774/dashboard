@@ -11,20 +11,24 @@ import {
   TableBody,
   MenuItem,
   Avatar,
-  alpha,
   InputBase,
 } from "@mui/material";
 import "../components/style.css";
 import ProductImg from "../images/Product.png";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
-
+import sampleData from "../utils/data";
 
 function ProductSell({ open, setOpen, options, loading, salesData }) {
   return (
-    <Paper style={{ height: "300px", padding: "20px", overflow: 'hidden' }}>
-        
-      <div style={{ width: '90%', display: "flex", justifyContent: "space-between" }}>
-      <div>
+    <Paper style={{ height: "300px", padding: "20px", overflow: "hidden" }}>
+      <div
+        style={{
+          width: "90%",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <div>
           <Typography
             component="div"
             variant="h5"
@@ -33,67 +37,31 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
             Product Sell
           </Typography>
         </div>
-         <div  style={{width: '40%', display: 'flex'}}>
-        {/*<div
-              style={{
-                display: 'flex',
-                position: "relative",
-                marginLeft: '45em',
-                borderRadius: "50px",
-                backgroundColor: "rgba(220, 220, 220, 0.6)",
-                width: "18%",
-              }}
-            >
-              <div
-                style={{
-                  position: "absolute",
-                  display: "flex",
-                  
-                  alignItems: "center",
-                  paddingLeft: "8px",
-                  pointerEvents: "none",
-                  zIndex: "1",
-                  height: "100%",
-                  color: alpha("#808080", 1),
-                }}
-              >
-                <SearchIcon />
-             
-              <InputBase
-                placeholder="Search"
-                inputProps={{ "aria-label": "search" }}
-                style={{
-                  paddingLeft: "2.5em",
-                  paddingTop: '0.8em',
-            
-                  color: "gray",
-                  fontSize: "small",
-                  
-                }}
-                
-              />
-              </div>
-            </div> */}
-            <div style={{display: 'flex', marginTop: '1%', justifyContent: 'space-between'}}>
-            <SearchIcon style={{ marginTop: '5%'}}/>
-            <InputBase placeholder="Search" style={{fontSize: 'small'}}/>
-            </div>
-            
-
-            <div>
-            <TextField
-            label="Last"
-            variant="standard"
-            select
-            defaultValue={30} // Default value for the dropdown
-            style={{ marginLeft: '20%', width: '5.5em' }}
-            
+        <div style={{ width: "40%", display: "flex" }}>
+          <div
+            style={{
+              display: "flex",
+              marginTop: "1%",
+              justifyContent: "space-between",
+            }}
           >
-            <MenuItem value={7}>7 Days</MenuItem>
-            <MenuItem value={30}>30 Days</MenuItem>
-            <MenuItem value={90}>90 Days</MenuItem>
-          </TextField>
-            </div>     
+            <SearchIcon style={{ marginTop: "5%" }} />
+            <InputBase placeholder="Search" style={{ fontSize: "small" }} />
+          </div>
+
+          <div>
+            <TextField
+              label="Last"
+              variant="standard"
+              select
+              defaultValue={30} // Default value for the dropdown
+              style={{ marginLeft: "20%", width: "5.5em" }}
+            >
+              <MenuItem value={7}>7 Days</MenuItem>
+              <MenuItem value={30}>30 Days</MenuItem>
+              <MenuItem value={90}>90 Days</MenuItem>
+            </TextField>
+          </div>
         </div>
       </div>
 
@@ -133,7 +101,7 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
             </TableRow>
           </TableHead>
           <TableBody>
-            {products.map((row, index) => (
+            {sampleData.productSellData.map((row, index) => (
               <TableRow key={row.id}>
                 <TableCell style={{ textAlign: "left", border: "none" }}>
                   <div style={{ display: "flex", marginTop: "1%" }}>
@@ -169,37 +137,5 @@ function ProductSell({ open, setOpen, options, loading, salesData }) {
     </Paper>
   );
 }
-
-const products = [
-  {
-    id: 1,
-    name: "Abstract 3D",
-    description: "Lorem ipsum dobr seit overut gannorctuct otyspacing alet.",
-    stock: 52,
-    price: "$45.99",
-    totalSales: 20,
-    image: { ProductImg },
-  },
-  {
-    id: 2,
-    name: "Sarphens Illustration",
-    description: "Lorem ipsum dobr seit overut gannorctuct otyspacing alet.",
-
-    stock: 32,
-    price: "$45.99",
-    totalSales: 20,
-    image: { ProductImg },
-  },
-  {
-    id: 3,
-    name: "Skin Product",
-    description: "Lorem ipsum dobr seit overut gannorctuct otyspacing alet.",
-
-    stock: 23,
-    price: "$25.99",
-    totalSales: 40,
-    image: { ProductImg },
-  },
-];
 
 export default ProductSell;

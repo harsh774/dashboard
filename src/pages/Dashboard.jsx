@@ -14,7 +14,6 @@ import {
 } from "@mui/material";
 import MenuIcon from "@mui/icons-material/Menu";
 import SearchIcon from "@mui/icons-material/SearchOutlined";
-
 import dollar from "../images/dollar.png";
 import orders from "../images/orders.png";
 import balance from "../images/balance.png";
@@ -25,7 +24,7 @@ import sampleData from "../utils/data";
 import StatCard from "../components/Stats";
 import SalesOverviewChart from "../components/BarChar";
 import PieChartComponent from "../components/PieChart";
-import ProductDetail from '../components/ProductDetail';
+import ProductDetail from "../components/ProductDetail";
 
 const drawerWidth = 230;
 
@@ -71,12 +70,15 @@ function Dashboard(props) {
       <CssBaseline />
       <AppBar
         position="fixed"
-        style={{ backgroundColor: "#F5F6F8", color: "black", boxShadow: "none"}}
+        style={{
+          backgroundColor: "#F5F6F8",
+          color: "black",
+          boxShadow: "none",
+        }}
         sx={{
           width: { sm: `calc(100% - ${drawerWidth}px)` },
           ml: { sm: `${drawerWidth}px` },
         }}
-        
       >
         <Toolbar>
           <IconButton
@@ -93,7 +95,7 @@ function Dashboard(props) {
             variant="h6"
             noWrap
             component="div"
-            style={{ marginLeft: "1.3em", fontWeight:"bold"}}
+            style={{ marginLeft: "1.3em", fontWeight: "bold" }}
           >
             Hello Shahrukh👋,
           </Typography>
@@ -237,16 +239,13 @@ function Dashboard(props) {
             />
           </Grid>
 
-          <Grid item xs={12} sm={8} md={3.5} >
+          <Grid item xs={12} sm={8} md={3.5}>
             <PieChartComponent />
           </Grid>
 
-          <Grid item xs={12} sm={8} md={12} >
-            {/* <ProductTable/> */}
-            <ProductDetail/>
+          <Grid item xs={12} sm={8} md={12}>
+            <ProductDetail />
           </Grid>
-
-          
         </Grid>
       </Box>
     </Box>
