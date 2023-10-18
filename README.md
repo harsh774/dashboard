@@ -1,7 +1,24 @@
-# Getting Started with Create React App
-
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+<h1 align="center" id="title">Fitpeo - Dashboard Assesment</h1>
+
+<p align="center"><img src="https://socialify.git.ci/harsh774/dashboard/image?language=1&amp;owner=1&amp;name=1&amp;stargazers=1&amp;theme=Light" alt="project-image"></p>
+
+<h2>🚀 Demo</h2>
+
+[https://dashboard-harsh774.vercel.app/](https://dashboard-harsh774.vercel.app/)
+
+<h2>Project Screenshots:</h2>
+
+![image](https://github.com/harsh774/dashboard/assets/80638077/8e8217b2-3f0d-4107-84d9-4ca9a99740d3)
+
+<h2>💻 Built with</h2>
+
+Technologies used in the project:
+
+*   React.JS
+*   Material UI
+*   Javascript
 ## Available Scripts
 
 In the project directory, you can run:
